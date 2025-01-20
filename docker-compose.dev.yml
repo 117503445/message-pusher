@@ -1,0 +1,15 @@
+# docker-compose.yml
+
+services:
+  message-pusher-dev:
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+    volumes:
+        - ./:/workspace
+        - message-pusher-dev-vsc:/root/.vscode-server
+    stdin_open: true
+    tty: true
+
+volumes:
+  message-pusher-dev-vsc:
